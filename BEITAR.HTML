@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>בית"ר ירושלים</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:#f3f4f6;
+    color:#111;
+}
+
+header{
+    background:linear-gradient(90deg,#111,#facc15);
+    color:white;
+    text-align:center;
+    padding:35px;
+}
+
+.logo{
+    width:130px;
+    background:white;
+    border-radius:50%;
+    padding:10px;
+}
+
+.section{
+    background:white;
+    margin:25px auto;
+    padding:25px;
+    width:85%;
+    border-radius:18px;
+    box-shadow:0 4px 15px #0002;
+}
+
+h2{
+    color:#111;
+    border-bottom:3px solid #facc15;
+    padding-bottom:8px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+}
+
+.box{
+    background:#fff7cc;
+    padding:15px;
+    border-radius:12px;
+    text-align:center;
+    font-weight:bold;
+}
+
+.player{
+    background:#f9fafb;
+    padding:12px;
+    border-radius:12px;
+    text-align:center;
+}
+
+button{
+    background:#111;
+    color:#facc15;
+    border:none;
+    padding:12px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#333;
+}
+
+a{
+    text-decoration:none;
+    color:white;
+}
+
+.back{
+    display:inline-block;
+    margin-top:20px;
+    background:#111;
+    padding:12px 20px;
+    border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<img class="logo" src="beitar.png">
+<h1>בית"ר ירושלים</h1>
+<p>עמוד הקבוצה הרשמי באתר של איציק</p>
+<a class="back" href="index.html">חזרה לעמוד הראשי</a>
+</header>
+
+<div class="section">
+<h2>📌 פרטי הקבוצה</h2>
+<div class="grid">
+<div class="box">עיר: ירושלים</div>
+<div class="box">אצטדיון: טדי</div>
+<div class="box">צבעים: צהוב ושחור</div>
+<div class="box">כינוי: המנורה</div>
+</div>
+</div>
+
+<div class="section">
+<h2>🏆 תארים</h2>
+<div class="grid">
+<div class="box">אליפויות: 6</div>
+<div class="box">גביעי מדינה: 8</div>
+<div class="box">גביעי טוטו: 3</div>
+<div class="box">סופרקאפ: 2</div>
+</div>
+</div>
+
+<div class="section">
+<h2>⚽ משחקים קרובים</h2>
+<div class="grid">
+<div class="box">בית"ר ירושלים נגד מכבי חיפה<br>יום ראשון 20:30</div>
+<div class="box">בית"ר ירושלים נגד הפועל באר שבע<br>יום רביעי 21:00</div>
+<div class="box">בית"ר ירושלים נגד מכבי תל אביב<br>שבת 19:30</div>
+</div>
+</div>
+
+<div class="section">
+<h2>👥 שחקנים בולטים</h2>
+<div class="grid">
+<div class="player">ירדן שועה</div>
+<div class="player">מיירון ג׳ורג׳</div>
+<div class="player">אדי גוטליב</div>
+<div class="player">מיגל סילבה</div>
+</div>
+</div>
+
+<div class="section">
+<h2>📰 חדשות בית"ר</h2>
+<p>כאן תוכל להוסיף חדשות על בית"ר ירושלים, החתמות, תוצאות ועדכונים.</p>
+</div>
+
+<div class="section">
+<h2>💛🖤 האם אתה אוהד בית"ר?</h2>
+<button onclick="addFan()">אני אוהד בית״ר!</button>
+<p id="fans">מספר אוהדים שלחצו: 0</p>
+</div>
+
+<script>
+let fans = 0;
+
+function addFan(){
+    fans++;
+    document.getElementById("fans").innerText =
+    "מספר אוהדים שלחצו: " + fans;
+}
+</script>
+
+</body>
+</html>
