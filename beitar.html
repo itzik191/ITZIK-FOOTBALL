@@ -147,87 +147,51 @@ a{
 
 <div class="section">
 </div>
-<div class="card">
+<div style="
+width:80%;
+margin:40px auto;
+background:rgba(0,0,0,0.8);
+padding:30px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 0 25px gold;
+">
 
-<h2>🗳️ סקר אוהדי בית"ר ירושלים</h2>
+<h2 style="color:#facc15;font-size:35px;">
+🗳️ סקר אוהדי בית"ר
+</h2>
 
-<p style="font-size:22px;">
-האם בית"ר תסיים העונה בטופ 3?
+<p style="font-size:24px;">
+האם בית"ר תסיים בטופ 3?
 </p>
 
-<div style="margin-top:20px;">
-
-<button onclick="voteYes()" style="
-padding:15px 30px;
-font-size:18px;
+<button style="
 background:#facc15;
+color:black;
+padding:15px 30px;
+font-size:20px;
 border:none;
-border-radius:12px;
-cursor:pointer;
+border-radius:15px;
 margin:10px;
+cursor:pointer;
 ">
 ✅ כן
 </button>
 
-<button onclick="voteNo()" style="
-padding:15px 30px;
-font-size:18px;
+<button style="
 background:#222;
 color:white;
+padding:15px 30px;
+font-size:20px;
 border:none;
-border-radius:12px;
-cursor:pointer;
+border-radius:15px;
 margin:10px;
+cursor:pointer;
 ">
 ❌ לא
 </button>
 
 </div>
-
-<p id="voteResult" style="
-font-size:20px;
-font-weight:bold;
-margin-top:20px;
-"></p>
-
-</div>
-function voteYes(){
-    localStorage.setItem("beitarPoll","yes");
-    document.getElementById("voteResult").innerHTML =
-    "💛 הצבעת: כן";
-}
-
-function voteNo(){
-    localStorage.setItem("beitarPoll","no");
-    document.getElementById("voteResult").innerHTML =
-    "🖤 הצבעת: לא";
-}
-
-}
-<<script>
-let voted = localStorage.getItem("beitarVoted");
-
-function showVoteStatus(){
-    if(voted === "yes"){
-        document.getElementById("voteResult").innerText =
-        "כבר הצבעת בסקר הזה 💛🖤";
-    } else {
-        document.getElementById("voteResult").innerText =
-        "עדיין לא הצבעת.";
-    }
-}
-
-function voteFan(){
-    if(localStorage.getItem("beitarVoted") === "yes"){
-        alert("כבר הצבעת, אי אפשר להצביע שוב.");
-        return;
-    }
-
-    localStorage.setItem("beitarVoted", "yes");
-    voted = "yes";
-
-    document.getElementById("voteResult").innerText =
-    "ההצבעה נשמרה! יאללה בית״ר 💛🖤";
 }
 
 showVoteStatus();
