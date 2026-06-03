@@ -203,20 +203,6 @@ function voteNo(){
     "🖤 הצבעת: לא";
 }
 
-window.onload = function(){
-
-let vote = localStorage.getItem("beitarPoll");
-
-if(vote=="yes"){
-document.getElementById("voteResult").innerHTML =
-"💛 הצבעת: כן";
-}
-
-if(vote=="no"){
-document.getElementById("voteResult").innerHTML =
-"🖤 הצבעת: לא";
-}
-
 }
 <<script>
 let voted = localStorage.getItem("beitarVoted");
