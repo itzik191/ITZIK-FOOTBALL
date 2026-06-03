@@ -149,17 +149,75 @@ a{
 </div>
 <div class="card">
 
-<h2>🖤💛 סקר אוהדים</h2>
+<h2>🗳️ סקר אוהדי בית"ר ירושלים</h2>
 
-<p>האם אתה אוהד בית"ר ירושלים?</p>
+<p style="font-size:22px;">
+האם בית"ר תסיים העונה בטופ 3?
+</p>
 
-<button onclick="voteFan()">
-כן, אני אוהד בית"ר!
+<div style="margin-top:20px;">
+
+<button onclick="voteYes()" style="
+padding:15px 30px;
+font-size:18px;
+background:#facc15;
+border:none;
+border-radius:12px;
+cursor:pointer;
+margin:10px;
+">
+✅ כן
 </button>
 
-<p id="voteResult"></p>
+<button onclick="voteNo()" style="
+padding:15px 30px;
+font-size:18px;
+background:#222;
+color:white;
+border:none;
+border-radius:12px;
+cursor:pointer;
+margin:10px;
+">
+❌ לא
+</button>
 
 </div>
+
+<p id="voteResult" style="
+font-size:20px;
+font-weight:bold;
+margin-top:20px;
+"></p>
+
+</div>
+function voteYes(){
+    localStorage.setItem("beitarPoll","yes");
+    document.getElementById("voteResult").innerHTML =
+    "💛 הצבעת: כן";
+}
+
+function voteNo(){
+    localStorage.setItem("beitarPoll","no");
+    document.getElementById("voteResult").innerHTML =
+    "🖤 הצבעת: לא";
+}
+
+window.onload = function(){
+
+let vote = localStorage.getItem("beitarPoll");
+
+if(vote=="yes"){
+document.getElementById("voteResult").innerHTML =
+"💛 הצבעת: כן";
+}
+
+if(vote=="no"){
+document.getElementById("voteResult").innerHTML =
+"🖤 הצבעת: לא";
+}
+
+}
 <<script>
 let voted = localStorage.getItem("beitarVoted");
 
