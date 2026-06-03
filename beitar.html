@@ -134,8 +134,8 @@ a{
 <h2>👥 שחקנים בולטים</h2>
 <div class="grid">
 <div class="player">ירדן שועה</div>
-<div class="player">מיירון ג׳ורג׳</div>
-<div class="player">אדי גוטליב</div>
+<div class="player">עומר אצילי</div>
+<div class="player">עדי יונה</div>
 <div class="player">מיגל סילבה</div>
 </div>
 </div>
@@ -146,20 +146,41 @@ a{
 </div>
 
 <div class="section">
-<h2>💛🖤 האם אתה אוהד בית"ר?</h2>
-<button onclick="addFan()">אני אוהד בית״ר!</button>
-<p id="fans">מספר אוהדים שלחצו: 0</p>
 </div>
+<h2>💛🖤 סקר אוהדים</h2>
 
-<script>
-let fans = 0;
+<p>האם אתה אוהד בית"ר ירושלים?</p>
 
-function addFan(){
-    fans++;
-    document.getElementById("fans").innerText =
-    "מספר אוהדים שלחצו: " + fans;
+<button onclick="voteFan()">כן, אני אוהד בית״ר!</button>
+
+<p id="voteResult"></p>
+<<script>
+let voted = localStorage.getItem("beitarVoted");
+
+function showVoteStatus(){
+    if(voted === "yes"){
+        document.getElementById("voteResult").innerText =
+        "כבר הצבעת בסקר הזה 💛🖤";
+    } else {
+        document.getElementById("voteResult").innerText =
+        "עדיין לא הצבעת.";
+    }
 }
-</script>
 
+function voteFan(){
+    if(localStorage.getItem("beitarVoted") === "yes"){
+        alert("כבר הצבעת, אי אפשר להצביע שוב.");
+        return;
+    }
+
+    localStorage.setItem("beitarVoted", "yes");
+    voted = "yes";
+
+    document.getElementById("voteResult").innerText =
+    "ההצבעה נשמרה! יאללה בית״ר 💛🖤";
+}
+
+showVoteStatus();
+</script>
 </body>
 </html>
